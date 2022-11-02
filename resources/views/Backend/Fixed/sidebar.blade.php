@@ -15,12 +15,12 @@
                             </a>
 
 
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{url('/details')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Senior Citizen
                             </a>
 
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{url('/name')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 service
                             </a>
@@ -41,15 +41,18 @@
                             </a>
 
 
+                            <a class="nav-link" href="{{url('/add')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Staff
+                            </a>
+
+
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Donation
                             </a>
 
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                
-                            </a>
+                            < 
                     </div>
                      
 

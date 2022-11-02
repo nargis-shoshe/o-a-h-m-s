@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>   staff list </h1>
+<h1>   service list </h1>
 
-<a href="{{url('/add/make')}}" class="btn btn-primary"> create staff list</a>
+<a href="{{url('/name/form')}}" class="btn btn-primary"> create staff list</a>
 
 
 <table class="table">
