@@ -3,16 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Services;
 
 class ServiceController extends Controller
 {
     public function type(){
-        return view('Backend.pages.sevices.service ');
+        
+        $servs=Services::all();
+        //dd($servs);
+
+
+        return view('Backend.pages.services.service',compact('servs'));
 }
 
 public function form(){
-    return view('Backend.pages.sevices.serviceform ');
+    return view('Backend.pages.services.serviceform ');
 
 }
 
@@ -20,7 +26,7 @@ public function form(){
 public function store(Request $request)
        {
 
-        //dd($request->all());
+       // dd($request->all());
 
 
              Services::create([
@@ -31,12 +37,10 @@ public function store(Request $request)
 
              ]);
             
-             return view('Backend.pages.sevices.serviceform');
+             return 'successfull';
         }
 
 
 
 
-
-
-}
+ }

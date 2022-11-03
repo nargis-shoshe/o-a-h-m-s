@@ -36,4 +36,4 @@ Route::get('/details/createcitizen',[CitizenController::class,'create']);
 
 Route::get('/name',[ServiceController::class,'type']);
 Route::get('/name/form',[ServiceController::class,'form']);
-Route::post('/name/store',[StaffController::class,'store'])->name('name.store');
+Route::post('/name/form/store',[ServiceController::class,'store'])->name('name.form.store');

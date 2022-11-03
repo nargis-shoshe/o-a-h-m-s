@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{route('name.store')}}" method="post">
+<form action="{{route('name.form.store')}}" method="post">
    @csrf
 <div class="mb-3">
     <label for="exampleInputname" class="form-label">name</label>
