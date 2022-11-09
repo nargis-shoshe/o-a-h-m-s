@@ -28,7 +28,7 @@
      @endforeach
     </tbody>
 </table>
-
+{{$servs->links()}}
  
 
 @endsection

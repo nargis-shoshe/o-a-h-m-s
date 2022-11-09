@@ -3,10 +3,17 @@
 @section('content')
 
 <form action="{{route('name.form.store')}}" method="post">
+
+@if($errors->any())
+@foreach($errors->all() as $message)
+<p class="alert alert-danger">{{$message}}</p>
+@endforeach
+@endif
+
    @csrf
 <div class="mb-3">
     <label for="exampleInputname" class="form-label">name</label>
-    <input name="name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input required name="name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
