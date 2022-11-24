@@ -4,7 +4,16 @@
 
 <h1>   staff list </h1>
 
-<a href="{{url('/add/make')}}" class="btn btn-primary"> create staff list</a>
+
+@if(session()->has('message'))
+        <p class="alert alert-success">{{session()->get('message')}}</p>
+      @endif
+
+    @if(session()->has('error'))
+        <p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+
+<a href="{{route('add.make')}}" class="btn btn-primary"> create staff list</a>
 
 
 <table class="table">
@@ -14,28 +23,34 @@
         <th scope="col">Name</th>
         <th scope="col">Phone_Number</th>
         <th scope="col">Handle</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
     </tr>
     </thead>
+    @foreach($staff as $data)
     <tbody>
     <tr>
-        <th scope="row">1</th>
-        <td>abc</td>
-        <td>01658852589</td>
-        <td> senior citizen</td>
+        <th scope="row">{{$data-> id}}</th>
+        <td>{{$data->name}}</td>
+        <td>{{$data->email}}</td>
+        <td>{{$data->password}}</td>
+        <td>
+
+
+        
+        <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= "staff_image">
+        </td>
+         
+
+        <td>
+                <a href="{{route('admin.staff.edit',$data->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{route('admin.staff.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                <a href="{{route('admin.staff.view',$data->id)}}" class="btn btn-success">View</a>
+            </td>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>xyz</td>
-        <td>01234569870</td>
-        <td>foods</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>efg</td>
-        <td>01478523697</td>
-        <td>cleaning</td>
-    </tr>
+     @endforeach
     </tbody>
+
 </table>
 
  

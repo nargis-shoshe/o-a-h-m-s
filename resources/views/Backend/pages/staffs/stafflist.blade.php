@@ -2,15 +2,15 @@
 
 @section('content')
 
-<form action="{{route('add.store')}}" method="post">
+<form action="{{route('add.store')}}" method="post" enctype="multipart/form-data">
     @csrf
 <div class="mb-3">
-    <label for="exampleInputname" class="form-label">name</label>
-    <input name="name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputname" class="form-label">Name</label>
+    <input required name="name"type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input name="email"type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input required name="email"type="email" class="form-control"  id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
@@ -21,10 +21,15 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
+  <div class="mb-3">
+    <label for="image">Upload Image</label>
+    <input required name="image"type="file" class="form-control" id="image">
+     
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
   
 </form>
-
  
+  
 
 @endsection
