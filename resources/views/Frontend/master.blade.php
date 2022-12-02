@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>HELPZ - Free Charity Website Template</title>
+        <title>OAMS Webpage</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -23,12 +23,13 @@
         <!-- Template Stylesheet -->
         <link href="{{url('/Frontend/css/style.css')}}" rel="stylesheet">
         @notifyCss
+       
         <style type="text/css"> .notify{ z-index: 1000000; margin-top: 2%; } </style>
     </head>
 
     <body>
          
-    @include('notify::components.notify')
+    @include('notify::components.notify') 
      @include('Frontend.Fixed.header')
 
 
@@ -40,10 +41,7 @@
         <!-- Back to top button -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
         
-        <!-- Pre Loader -->
-        <div id="loader" class="show">
-            <div class="loader"></div>
-        </div>
+       
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

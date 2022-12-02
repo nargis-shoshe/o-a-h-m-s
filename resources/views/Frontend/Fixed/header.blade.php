@@ -10,7 +10,7 @@
                             </div>
                             <div class="text">
                                 <i class="fa fa-envelope"></i>
-                                <p>info@example.com</p>
+                                <p> habijabbai</p>
                             </div>
                         </div>
                     </div>
@@ -41,23 +41,25 @@
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="#donate_form" class="nav-item nav-link">Donor</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
-                        <a href="blog.html" class="nav-item nav-link">Login</a>
-
-                        <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#exampleModal">Registration</a>
-
+                        @auth
                         
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
-                            </div>
-                        </div>
+                    <a class="nav-item nav-link">
+
+                    {{auth()->user()->name}}
+                </a>
+                    <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
+                    @else
+                        
+                        <a href="#" class="nav-item nav-link"  data-toggle="modal" data-target="#login">Login</a>
+  
+                        <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#Registration">Registration</a>
+                         
+                        @endauth
+                        
+                         
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>

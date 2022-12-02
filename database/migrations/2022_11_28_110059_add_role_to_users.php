@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('seniorcitizens', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',100);
-            $table->text('address',100);
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('role')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seniorcitizens');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

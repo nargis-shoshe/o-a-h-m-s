@@ -27,8 +27,9 @@
         <th scope="col">Action</th>
     </tr>
     </thead>
-    @foreach($staff as $data)
+   
     <tbody>
+    @foreach($staff as $data)
     <tr>
         <th scope="row">{{$data-> id}}</th>
         <td>{{$data->name}}</td>

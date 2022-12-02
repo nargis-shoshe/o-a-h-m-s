@@ -17,8 +17,9 @@
         <th scope="col">password</th>
     </tr>
     </thead>
-    @foreach($servs as $data)
+   
     <tbody>
+    @foreach($servs as $data)
     <tr>
         <th scope="row">{{$data-> id}}</th>
         <td>{{$data->name}}</td>

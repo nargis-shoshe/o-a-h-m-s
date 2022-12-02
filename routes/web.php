@@ -10,6 +10,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
+use App\Http\Controllers\DonorController;
 use App\Models\Staff;
 
 /*
@@ -33,7 +34,7 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 Route::group(['middleware'=>'auth'], function(){
- 
+   
     Route::get('/',[HommeController::class,'index'])->name('dashboard');
     
     Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('dashboard');
@@ -44,13 +45,16 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/add/store',[StaffController::class,'store'])->name('add.store');
     
     Route::get('/admin',[AdminController::class,'panel']);
-    
     Route::post('/admin/store',[AdminController::class,'store'])->name('admin.store');
-    Route::get('/details',[CitizenController::class,'details']);
-    Route::get('/details/createcitizen',[CitizenController::class,'create']);
+
+
+    Route::get('/details',[CitizenController::class,'list'])->name('details');
+    Route::get('/formdetails',[CitizenController::class,'form'])->name('formdetails');
+    Route::post('/formstore',[CitizenController::class,'store'])->name('form.store');
+
     
     Route::get('/name',[ServiceController::class,'type']);
-    Route::get('/name/form',[ServiceController::class,'form']);
+    Route::get('/name/form',[ServiceCoontroller::class,'form']);
     Route::post('/name/form/store',[ServiceController::class,'store'])->name('name.form.store');
 
 
@@ -58,6 +62,19 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/staff/view/{staff_id}',[StaffController::class,'viewstaff'])->name('admin.staff.view');
     Route::get('/staff/edit/{staff_id}',[StaffController::class,'editstaff'])->name('admin.staff.edit');
     Route::put('/staff/update/{staff_id}',[StaffController::class,'update'])->name('admin.staff.update');
+
+
+    Route::get('/donor',[DonorController::class,'donor'])->name('donor');
+    Route::get('/donor/form',[DonorController::class,'donorform'])->name('donor.form');
+    Route::post('/donor/store',[DonorController::class,'store'])->name('donor.store');
+
+
+    Route::get('/donor/delete/{donor_id}',[DonorController::class,'deletedonor'])->name('admin.donor.delete');
+    Route::get('/donor/view/{donor_id}',[DonorController::class,'viewdonor'])->name('admin.donor.view');
+    Route::get('/donor/edit/{donor_id}',[DonorController::class,'editdonor'])->name('admin.donor.edit');
+    Route::put('/donor/update/{donor_id}',[DonorController::class,'updatedonor'])->name('admin.donor.update');
+
+
 
 
     
@@ -69,3 +86,5 @@ Route::group(['middleware'=>'auth'], function(){
 Route::get('/',[WebController::class,'home'])->name('webpage');
 
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
+Route::post('/user/login',[WebController::class,'login'])->name('user.login');
+Route::get('/user/logout',[WebController::class,'logout'])->name('user.logout');

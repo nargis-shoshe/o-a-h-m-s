@@ -7,16 +7,16 @@
                 <div class="owl-carousel">
                     <div class="carousel-item">
                         <div class="carousel-img">
-                            <img src="{{url('/Frontend/img/about.jpg')}}" alt="Image">
+                            <img src="{{url('/Frontend/img/Home-health-agency.jpg')}}" alt="Image">
                         </div>
                         <div class="carousel-text">
-                            <h1>Let's be kind for children</h1>
+                            <h1>Let's be kind for Old people</h1>
                             <p>
                                 Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac consequat at lectus in malesuada
                             </p>
                             <div class="carousel-btn">
                                 <a class="btn btn-custom" href="">Donate Now</a>
-                                <a class="btn btn-custom btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">Watch Video</a>
+                            
                             </div>
                         </div>
                     </div>
@@ -27,21 +27,7 @@
         <!-- Carousel End -->
 
         <!-- Video Modal Start-->
-        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>        
-                        <!-- 16:9 aspect ratio -->
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always" allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
+         
         <!-- Video Modal End -->
         
 
@@ -326,7 +312,7 @@
         
         
         <!-- Donate Start -->
-        <div class="donate" data-parallax="scroll" data-image-src="img/donate.jpg">
+        <div class="donate" id="donate_form" data-parallax="scroll" data-image-src="img/donate.jpg">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7">
@@ -728,23 +714,23 @@
 
 
 <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="Registration" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+        <h5 class="modal-title" id="Registration"> Signup</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
       
-      <form action="{{('registration')}}" method="post" enctype="multipart/form-data">
+      <form action="{{route('registration')}}" method="post" enctype="multipart/form-data">
         @csrf
 
   <div class="form-group">
     <label for="exampleInputName">Name</label>
-    <input name="senior_citizen_name" type="name" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input name="senior_citizen_name" type="name" class="form-control" id="exampleInputPassword1" placeholder="Name">
   </div>    
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
@@ -755,19 +741,25 @@
     <label for="exampleInputPassword1">Password</label>
     <input name="senior_citizen_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Role</label>
+    <input name="senior_citizen" type="text" class="form-control" id="exampleInputPassword1" placeholder="Role">
+  </div>
 <!--
   <div class="form-group">
     <label for="Phone Number">Phone number</label>
     <input name="senior citizen_phone number" type="Phone Number" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
-</form>
--->
+  -->
+ 
+
 
       </div>
       <div class="modal-footer">
         
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -775,8 +767,46 @@
 
 
 
+<!--login -->
+
+ <!-- Button trigger modal -->
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="login">Login</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
 
 
+        <form action="{{route('user.login')}}" method="post" enctype="multipart/form-data">
+          @csrf
+        <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+
+         
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">submit</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 

@@ -15,7 +15,7 @@
                             </a>
 
 
-                            <a class="nav-link" href="{{url('/details')}}">
+                            <a class="nav-link" href="{{route('details')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Senior Citizen
                             </a>
@@ -35,10 +35,7 @@
                                 Member
                             </a>
 
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Donor
-                            </a>
+                            
 
 
                             <a class="nav-link" href="{{url('/add')}}">
@@ -47,12 +44,12 @@
                             </a>
 
 
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{route('donor')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Donation
+                                Donor
                             </a>
 
-                            < 
+                            
                     </div>
                      
 
