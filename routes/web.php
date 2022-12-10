@@ -5,6 +5,7 @@ use App\Http\Controllers\HommeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BelongingController;
 use App\Http\Controllers\CitizenController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
@@ -12,6 +13,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebController;
 use App\Http\Controllers\DonorController;
 use App\Models\Staff;
+use App\Http\Controllers\EnquiryController;  
+use App\Http\Controllers\MoneyController;  
+use App\Http\Controllers\ProfileController;  
 
 /*
 |--------------------------------------------------------------------------
@@ -53,8 +57,8 @@ Route::group(['middleware'=>'auth'], function(){
     Route::post('/formstore',[CitizenController::class,'store'])->name('form.store');
 
     
-    Route::get('/name',[ServiceController::class,'type']);
-    Route::get('/name/form',[ServiceCoontroller::class,'form']);
+    Route::get('/name',[ServiceController::class,'type'])->name('name');
+    Route::get('/name/form',[ServiceController::class,'form'])->name('name.form');
     Route::post('/name/form/store',[ServiceController::class,'store'])->name('name.form.store');
 
 
@@ -75,7 +79,14 @@ Route::group(['middleware'=>'auth'], function(){
     Route::put('/donor/update/{donor_id}',[DonorController::class,'updatedonor'])->name('admin.donor.update');
 
 
+    Route::get('/enquiry/list',[EnquiryController::class,'enquirylist'])->name('enquiry.list');
+    Route::get('/donation/list',[BelongingController::class,'donationlist'])->name('donation.list');
+    Route::get('/donatemoney/list',[MoneyController::class,'donation_moneylist'])->name('donatemmoney.list');
+    Route::get('/donatemoney/view{donor_id}',[MoneyController::class,'viewdonation'])->name('admin.donatemmoney.view');
 
+
+
+    
 
     
 });
@@ -88,3 +99,15 @@ Route::get('/',[WebController::class,'home'])->name('webpage');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
 Route::get('/user/logout',[WebController::class,'logout'])->name('user.logout');
+
+Route::get('/enquiry',[EnquiryController::class,'list'])->name('enquiry');
+Route::post('/enquiry/store',[EnquiryController::class,'store'])->name('enquiry.store');
+
+//Route::get('/belonging',[BelongingController::class,'list'])->name('belonging');
+//Route::post('/belonging/form',[BelongingController::class,'belongingsform'])->name('belonging.form');
+ 
+Route::get('/money',[MoneyController::class,'Moneyform'])->name('money');
+Route::post('/money/store',[MoneyController::class,'Moneystore'])->name('money.store');
+
+Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
+Route::put('/profile/update',[ProfileController::class,'updateprofile'])->name('profile.update');

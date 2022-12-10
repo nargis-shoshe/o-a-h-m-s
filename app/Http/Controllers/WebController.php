@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Services;
+use App\Models\Staff;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,8 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class WebController extends Controller
 {
     public function home(){
-        
-        return view('Frontend.pages.home');
+        $servs=Services::all();
+        $staff=Staff::all();
+        return view('Frontend.pages.home',compact('servs','staff'));
     }
 
 

@@ -76,80 +76,31 @@
 
 
         <!-- Service Start -->
+
         <div class="service">
             <div class="container">
                 <div class="section-header text-center">
                     <p>What We Do?</p>
                     <h2>We believe that we can save more lifes with you</h2>
                 </div>
+                @foreach($servs as $data)
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item">
                             <div class="service-icon">
+                            <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= " ">
                                 <i class="flaticon-diet"></i>
                             </div>
                             <div class="service-text">
-                                <h3>Healthy Food</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
+                                <h3>{{$data->name}}</h3>
+                                <p>{{$data->descrtion}}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="flaticon-water"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Pure Water</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="flaticon-healthcare"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Health Care</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="flaticon-education"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Primary Education</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="flaticon-home"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Residence Facilities</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
-                            <div class="service-icon">
-                                <i class="flaticon-social-care"></i>
-                            </div>
-                            <div class="service-text">
-                                <h3>Social Care</h3>
-                                <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
-                            </div>
-                        </div>
+
+
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
         <!-- Service End -->
@@ -205,106 +156,30 @@
         <div class="causes">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Popular Causes</p>
-                    <h2>Let's know about charity causes around the world</h2>
+                    <p>Care Givers Team</p>
+                    <h2>Let's know about who are taken care of the old people</h2>
                 </div>
-                <div class="owl-carousel causes-carousel">
+                @foreach($staff as $data)
+                <!--<div class="owl-carousel causes-carousel">-->
                     <div class="causes-item">
-                        <div class="causes-img">
-                            <img src="img/causes-1.jpg" alt="Image">
-                        </div>
-                        <div class="causes-progress">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                            <div class="progress-text">
-                                <p><strong>Raised:</strong> $100000</p>
-                                <p><strong>Goal:</strong> $50000</p>
-                            </div>
-                        </div>
+                         
                         <div class="causes-text">
-                            <h3>Lorem ipsum dolor sit</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
+                            <h3>Staff Name</h3>
+                            <p> stafff details</p>
                         </div>
                         <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
+                        <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= "staff_image">
+                        <p>{{$data->name}}</p>
+                        <p>{{$data->email}}</p>
+                        <p>{{$data->designation}}</p>
+                        <!--<a class="btn btn-custom">Learn More</a>
+                            <a class="btn btn-custom">Donate Now</a>-->
                         </div>
                     </div>
-                    <div class="causes-item">
-                        <div class="causes-img">
-                            <img src="img/causes-2.jpg" alt="Image">
-                        </div>
-                        <div class="causes-progress">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                            <div class="progress-text">
-                                <p><strong>Raised:</strong> $100000</p>
-                                <p><strong>Goal:</strong> $50000</p>
-                            </div>
-                        </div>
-                        <div class="causes-text">
-                            <h3>Lorem ipsum dolor sit</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                        </div>
-                        <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
-                        </div>
-                    </div>
-                    <div class="causes-item">
-                        <div class="causes-img">
-                            <img src="img/causes-3.jpg" alt="Image">
-                        </div>
-                        <div class="causes-progress">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                            <div class="progress-text">
-                                <p><strong>Raised:</strong> $100000</p>
-                                <p><strong>Goal:</strong> $50000</p>
-                            </div>
-                        </div>
-                        <div class="causes-text">
-                            <h3>Lorem ipsum dolor sit</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                        </div>
-                        <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
-                        </div>
-                    </div>
-                    <div class="causes-item">
-                        <div class="causes-img">
-                            <img src="img/causes-4.jpg" alt="Image">
-                        </div>
-                        <div class="causes-progress">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span>85%</span>
-                                </div>
-                            </div>
-                            <div class="progress-text">
-                                <p><strong>Raised:</strong> $100000</p>
-                                <p><strong>Goal:</strong> $50000</p>
-                            </div>
-                        </div>
-                        <div class="causes-text">
-                            <h3>Lorem ipsum dolor sit</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabit facilis ornare velit non vulputa</p>
-                        </div>
-                        <div class="causes-btn">
-                            <a class="btn btn-custom">Learn More</a>
-                            <a class="btn btn-custom">Donate Now</a>
-                        </div>
-                    </div>
+                    @endforeach
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -312,51 +187,7 @@
         
         
         <!-- Donate Start -->
-        <div class="donate" id="donate_form" data-parallax="scroll" data-image-src="img/donate.jpg">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7">
-                        <div class="donate-content">
-                            <div class="section-header">
-                                <p>Donate Now</p>
-                                <h2>Let's donate to needy people for better lives</h2>
-                            </div>
-                            <div class="donate-text">
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non. Aliquam metus tortor, auctor id gravida, viverra quis sem. Curabitur non nisl nec nisi maximus. Aenean convallis porttitor. Aliquam interdum at lacus non blandit.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="donate-form">
-                            <form>
-                                <div class="control-group">
-                                    <input type="text" class="form-control" placeholder="Name" required="required" />
-                                </div>
-                                <div class="control-group">
-                                    <input type="email" class="form-control" placeholder="Email" required="required" />
-                                </div>
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-custom active">
-                                        <input type="radio" name="options" checked> $10
-                                    </label>
-                                    <label class="btn btn-custom">
-                                        <input type="radio" name="options"> $20
-                                    </label>
-                                    <label class="btn btn-custom">
-                                        <input type="radio" name="options"> $30
-                                    </label>
-                                </div>
-                                <div>
-                                    <button class="btn btn-custom" type="submit">Donate Now</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- Donate End -->
         
         
@@ -368,25 +199,6 @@
                     <h2>Be ready for our upcoming charity events</h2>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6">
-                        <div class="event-item">
-                            <img src="img/event-1.jpg" alt="Image">
-                            <div class="event-content">
-                                <div class="event-meta">
-                                    <p><i class="fa fa-calendar-alt"></i>01-Jan-45</p>
-                                    <p><i class="far fa-clock"></i>8:00 - 10:00</p>
-                                    <p><i class="fa fa-map-marker-alt"></i>New York</p>
-                                </div>
-                                <div class="event-text">
-                                    <h3>Lorem ipsum dolor sit</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Neca pretim miura bitur facili ornare velit non vulpte liqum metus tortor
-                                    </p>
-                                    <a class="btn btn-custom" href="">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-6">
                         <div class="event-item">
                             <img src="img/event-2.jpg" alt="Image">
@@ -413,84 +225,7 @@
 
 
         <!-- Team Start -->
-        <div class="team">
-            <div class="container">
-                <div class="section-header text-center">
-                    <p>Meet Our Team</p>
-                    <h2>Awesome guys behind our charity activities</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-1.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Donald John</h2>
-                                <p>Founder & CEO</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-2.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Adam Phillips</h2>
-                                <p>Chef Executive</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-3.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>Thomas Olsen</h2>
-                                <p>Chef Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
-                            <div class="team-img">
-                                <img src="img/team-4.jpg" alt="Team Image">
-                            </div>
-                            <div class="team-text">
-                                <h2>James Alien</h2>
-                                <p>Advisor</p>
-                                <div class="team-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+         
         <!-- Team End -->
         
         

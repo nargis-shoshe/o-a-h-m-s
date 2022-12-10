@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>OAMS Webpage</title>
+        <title>OAHMS Webpage</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
         <meta content="Free Website Template" name="description">
@@ -33,9 +33,9 @@
      @include('Frontend.Fixed.header')
 
 
-     
+     <div style="margin-top: 100px;">
       @yield('content')   
-
+      </div>
         @include('Frontend.Fixed.footer')
         
         <!-- Back to top button -->

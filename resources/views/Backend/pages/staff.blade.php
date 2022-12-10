@@ -21,8 +21,8 @@
     <tr>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
-        <th scope="col">Phone_Number</th>
-        <th scope="col">Handle</th>
+        <th scope="col">Email</th>
+        <th scope="col">Designation</th>
         <th scope="col">Image</th>
         <th scope="col">Action</th>
     </tr>
@@ -34,7 +34,8 @@
         <th scope="row">{{$data-> id}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
-        <td>{{$data->password}}</td>
+        <td>{{$data->designation}}</td>
+         
         <td>
 
 

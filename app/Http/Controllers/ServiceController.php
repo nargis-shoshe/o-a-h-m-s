@@ -29,22 +29,30 @@ public function form(){
 
 public function store(Request $request)
        {
+       //dd($request->all());
 
         $request->validate([
             'name'=>'required|unique:services,name'
         ]);
-       // dd($request->all());
 
+        $fileName=null;
+if($request->hasFile('image'))
+{
+   // dd('true');
+   //generate name
+   $fileName=date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+   $request->file('image')->storeAs('/Inserts',$fileName);
 
+}
              Services::create([
-              'name'=>$request->name,
-               'email'=>$request->email,
-             'password'=>$request->password
+               'name'=>$request->name,
+               'description'=>$request->description,
+               'image'=>$fileName
 
 
              ]);
             
-             return 'successfull';
+             return redirect()->route('name');
         }
 
 

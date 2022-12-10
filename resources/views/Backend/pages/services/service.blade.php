@@ -12,9 +12,9 @@
     <thead class="thead-dark">
     <tr>
         <th scope="col">id</th>
-        <th scope="col"> name</th>
-        <th scope="col">email</th>
-        <th scope="col">password</th>
+        <th scope="col"> Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
     </tr>
     </thead>
    
@@ -23,8 +23,12 @@
     <tr>
         <th scope="row">{{$data-> id}}</th>
         <td>{{$data->name}}</td>
-        <td>{{$data->email}}</td>
-        <td>{{$data->password}}</td>
+        <td>{{$data->description}}</td>
+         
+        <td>
+        <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= " ">
+        </td>
+         
     </tr>
      @endforeach
     </tbody>

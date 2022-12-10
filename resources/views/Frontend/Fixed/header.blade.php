@@ -41,15 +41,19 @@
                     <div class="navbar-nav ml-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="#donate_form" class="nav-item nav-link">Donor</a>
+                        <a href="{{route('money')}}" class="nav-item nav-link">Donation</a>
                         <a href="causes.html" class="nav-item nav-link">Causes</a>
                         <a href="event.html" class="nav-item nav-link">Events</a>
+                        <a href="event.html" class="nav-item nav-link">Caregivers</a>
                         @auth
                         
                     <a class="nav-item nav-link">
 
                     {{auth()->user()->name}}
                 </a>
+
+                <a href="{{route('profile')}}" class="nav-item nav-link">Profile</a>
+
                     <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
                     @else
                         
@@ -60,7 +64,7 @@
                         @endauth
                         
                          
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{route('enquiry')}}" class="nav-item nav-link">Enquiries</a>
                     </div>
                 </div>
             </div>

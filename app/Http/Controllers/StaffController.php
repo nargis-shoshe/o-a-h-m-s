@@ -35,7 +35,7 @@ class StaffController extends Controller
         $request->validate([
             'name'=>'required|unique:staff,name',
             'email'=>'required',
-            'image'=>'required',
+            
 
         ]);
 $fileName=null;
@@ -49,14 +49,15 @@ if($request->hasFile('image'))
 }
 
              Staff::create([
-              'name'=>$request->name,
-            'email'=>$request->email,
+             'name'=>$request->name,
+             'email'=>$request->email,
              'password'=>$request->password,
+             'designation'=>$request->designation,
              'image'=>$fileName
 
 
              ]);
-             return view('Backend.pages.staffs.staffview');
+             return redirect()->route('add');
 
 
 
