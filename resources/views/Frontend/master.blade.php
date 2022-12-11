@@ -36,7 +36,7 @@
      <div style="margin-top: 100px;">
       @yield('content')   
       </div>
-        @include('Frontend.Fixed.footer')
+        <!--@include('Frontend.Fixed.footer')-->
         
         <!-- Back to top button -->
         <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

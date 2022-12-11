@@ -87,13 +87,13 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="service-item">
-                            <div class="service-icon">
-                            <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= " ">
-                                <i class="flaticon-diet"></i>
+                            <div class=" ">
+                            <img width="200%" style="border-radius: 10px" src="{{url('/Inserts/'.$data->image)}}" alt= " ">
+                                <i class=""></i>
                             </div>
                             <div class="service-text">
                                 <h3>{{$data->name}}</h3>
-                                <p>{{$data->descrtion}}</p>
+                                <p>{{$data->description}}</p>
                             </div>
                         </div>
 

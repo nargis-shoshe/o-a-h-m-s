@@ -16,6 +16,7 @@ use App\Models\Staff;
 use App\Http\Controllers\EnquiryController;  
 use App\Http\Controllers\MoneyController;  
 use App\Http\Controllers\ProfileController;  
+use App\Http\Controllers\ExpenseController;  
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +42,7 @@ Route::group(['middleware'=>'auth'], function(){
    
     Route::get('/',[HommeController::class,'index'])->name('dashboard');
     
-    Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('dashboard');
+    Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('home');
 
 
     Route::get('/add',[StaffController::class,'list'])->name('add');
@@ -80,13 +81,23 @@ Route::group(['middleware'=>'auth'], function(){
 
 
     Route::get('/enquiry/list',[EnquiryController::class,'enquirylist'])->name('enquiry.list');
+
     Route::get('/donation/list',[BelongingController::class,'donationlist'])->name('donation.list');
+
     Route::get('/donatemoney/list',[MoneyController::class,'donation_moneylist'])->name('donatemmoney.list');
     Route::get('/donatemoney/view{donor_id}',[MoneyController::class,'viewdonation'])->name('admin.donatemmoney.view');
 
 
 
-    
+    Route::get('/expense',[ExpenseController::class,'expenselist'])->name('expenselist');
+    Route::get('/expense/form',[ExpenseController::class,'expenseform'])->name('expenseform');
+    Route::post('/expense/store',[ExpenseController::class,'expensestore'])->name('expensestore');
+
+
+    Route::get('/expense/delete/{expense_id}',[ExpenseController::class,'deleteexpense'])->name('admin.expense.delete');
+    Route::get('/expense/view/{expense_id}',[ExpenseController::class,'viewexpense'])->name('admin.expense.view');
+    Route::get('/expense/edit/{expense_id}',[ExpenseController::class,'editexpense'])->name('admin.expense.edit');
+    Route::put('/expense/update/{expense_id}',[ExpenseController::class,'update'])->name('admin.expense.update');
 
     
 });

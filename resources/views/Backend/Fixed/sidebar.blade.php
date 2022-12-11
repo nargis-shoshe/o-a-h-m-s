@@ -3,7 +3,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                              
-                            <a class="nav-link" href="{{url('/dashboard')}}">
+                            <a class="nav-link" href="{{route('home')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Dashboard
                             </a>
@@ -55,6 +55,12 @@
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Donor
                             </a>
+
+                            <a class="nav-link" href="{{route('expenselist')}}">
+                                <div class="sb-nav-link-icon"><i class=""></i></div>
+                                Expense
+                            </a>
+
 
                             
                     </div>
