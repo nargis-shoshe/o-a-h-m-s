@@ -17,23 +17,21 @@ class MoneyController extends Controller
     public function Moneystore(Request $request){
 //dd($request->all());
   $request->validate([
-     'donor_name'=>'required',
-     'donor_email'=>'required',
-     'phone_number'=>'required',
+      
+      
+      
      'account_number'=>'required',
      'donor_amount'=>'required',
      'donor_belonging'=>'required',
      'transaction_id'=>'required',
-     'status'=>'required',
+     
 
      ]);
           
             Donation::create([
+                "user_id" => auth()->user()->id,
                 'donor_amount'=>$request-> donor_amount,
-                'donar_name'=>$request-> donor_name,
-                'phone_number'=>$request->phone_number,
                 'belongings'=>$request->donor_belonging,
-                'donor_email'=>$request->donor_email,
                 'account_number'=>$request->account_number,
                 'transaction_id'=>$request->transaction_id,
                 'payment_method'=>$request->status,
@@ -72,7 +70,7 @@ public function reportsearch(Request $request)
 //        ]);
 
     $validator = Validator::make($request->all(), [
-        'from_date'    => 'required|date',
+        'from_date'    => 'required|date|before_or_equal:now',
         'to_date'      => 'required|date|after:from_date',
     ]);
     

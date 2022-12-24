@@ -35,28 +35,30 @@
         <th scope="col">Transaction-ID</th>        
         <th scope="col">Account Number</th>        
         <th scope="col">Payment Mthod</th>        
-        <th scope="col">Action</th>
+        
 
         </tr>
         </thead>
         <tbody>
+
+        
         @if(isset($donor))
         @foreach($donor as $key=>$data)
         <tr>
         <th scope="row">{{$key+1}}</th>
-        <td>{{$data->donar_name}}</td>
-        <td>{{$data->donor_email}}</td>
-        <td>{{$data->phone_number}}</td>
+        <td>{{$data->user->name}}</td>
+        <td>{{$data->user->email}}</td>
+        <td>{{$data->user->mobile}}</td>
         <td>{{$data->donor_amount}}</td>
         <td>{{$data->belongings}}</td>
         <td>{{$data->Transaction_id}}</td>
         <td>{{$data->account_number}}</td>
         <td>{{$data->payment_method}}</td>
-
         </tr>
         @endforeach
         @endif
         </tbody>
+        
     </table>
 </div>
 <button onclick="printDiv('DonationReport')" class="btn btn-success">Print</button>

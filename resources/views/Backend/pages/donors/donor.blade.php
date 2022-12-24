@@ -18,7 +18,6 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th> 
         <th scope="col">Phone_Number</th>
-        <th scope="col">Address</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
@@ -29,8 +28,7 @@
         <th scope="row">{{$data->id}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
-        <td>{{$data->phone_number}}</td>
-        <td>{{$data->address}}</td>
+        <td>{{$data->mobile}}</td>
         <td>
             <a href="{{route('admin.donor.edit',$data->id)}} " class="btn btn-primary">Edit</a>
             <a href="{{route('admin.donor.delete',$data->id)}}" class="btn btn-danger">Delete</a>

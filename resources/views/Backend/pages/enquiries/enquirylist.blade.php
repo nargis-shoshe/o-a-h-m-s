@@ -25,8 +25,9 @@
         <td>{{$data->email}}</td>
         <td>{{$data->message}}</td>
         <td>
-                <a href="" class="btn btn-primary">Read</a>
-                <a href="" class="btn btn-danger">Unread</a>
+                <a href="{{route('admin.enquiry.update',$data->id)}}" class="btn btn-primary">Update</a>
+        
+                 
         </td>
     </tr>
      @endforeach

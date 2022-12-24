@@ -26,7 +26,7 @@ class ExpenseController extends Controller
         ]);
         Expense::create([
          'date'=>$request->date,
-         'remarks'=>$request->remarks,
+          
          'details'=>$request->details,
           
          'overall_balance'=>$request->overall_balance,

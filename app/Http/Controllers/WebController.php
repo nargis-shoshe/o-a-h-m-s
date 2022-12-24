@@ -49,7 +49,7 @@ class WebController extends Controller
       'email'=>$request->senior_citizen_email,
       'mobile'=>$request->phone_number,
       'password'=>bcrypt($request->senior_citizen_password),
-      'role'=>$request->senior_citizen,
+      'role'=>"doner",
       'status'=>'inactive',
       'address'=>$request->address,
       'registration_date'=>$request->registration_date,

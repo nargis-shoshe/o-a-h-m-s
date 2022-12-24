@@ -41,7 +41,15 @@ return redirect()->route('webpage');
 
     public function enquirylist(){
         $enquiries=Enquiry::all();
-
         return view('Backend.pages.enquiries.enquirylist',compact('enquiries'));
+    }
+
+    public function readenquiry($enquiry_id)
+    {
+        Enquiry::findOrFail($enquiry_id)->update([
+            "status"=>"read"
+        ]);
+    
+             return redirect()->back();
     }
 }

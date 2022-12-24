@@ -44,32 +44,32 @@ class UserController extends Controller
     }
 
 
-    public function active(Request $request,$user_id)
-    {
+    //public function active(Request $request,$user_id)
+   // {
       
-        $user=User::find($user_id);
-        $user->update([
+      //  $user=User::find($user_id);
+       // $user->update([
 
-         'status'=>'Approve'
-        ]);
-        return redirect()->route('user.list')->with('message','Approved successfully');
+       //  'status'=>'Approve'
+       // ]);
+      //  return redirect()->route('user.list')->with('message','Approved successfully');
 
     
-    }
+//}
 
 
-    public function reject(Request $request,$user_id)
-    {
+    //public function reject(Request $request,$user_id)
+    //{
       
-        $user=user::find($user_id);
-        $user->update([
+        //$user=user::find($user_id);
+        //$user->update([
 
-         'status'=>'reject'
-        ]);
-        return redirect()->route('user.list')->with('message','User is not active');
+        // 'status'=>'reject'
+        //]);
+        //return redirect()->route('user.list')->with('message','User is not active');
 
     
-    }
+   // }
 
 
     

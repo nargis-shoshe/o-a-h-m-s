@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Donor;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DonorController extends Controller
@@ -10,7 +11,7 @@ class DonorController extends Controller
     public function donor()
 
     {
-        $dons=Donor::all();
+        $dons=User::where("role","doner")->get();
 
         return view('Backend.pages.donors.donor',compact('dons'));
     }

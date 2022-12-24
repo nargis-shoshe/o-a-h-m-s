@@ -94,6 +94,8 @@ Route::group(['middleware'=>'admin'], function(){
 
 
     Route::get('/enquiry/list',[EnquiryController::class,'enquirylist'])->name('enquiry.list');
+    Route::get('/enquiry/list/{enquiry_id}',[EnquiryController::class,'readenquiry'])->name('admin.enquiry.update');
+
 
     Route::get('/donation/list',[BelongingController::class,'donationlist'])->name('donation.list');
 
@@ -135,17 +137,24 @@ Route::post('/scregistration',[RegistrationController::class,'scregistration'])-
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
  
-Route::get('/enquiry',[EnquiryController::class,'list'])->name('enquiry');
-Route::post('/enquiry/store',[EnquiryController::class,'store'])->name('enquiry.store');
 
 //Route::get('/belonging',[BelongingController::class,'list'])->name('belonging');
 //Route::post('/belonging/form',[BelongingController::class,'belongingsform'])->name('belonging.form');
 
-Route::get('/money',[MoneyController::class,'Moneyform'])->name('money');
-Route::post('/money/store',[MoneyController::class,'Moneystore'])->name('money.store');
+
 Route::group(['middleware' => 'auth'], function () {
+
+
+Route::get('/enquiry',[EnquiryController::class,'list'])->name('enquiry');
+Route::post('/enquiry/store',[EnquiryController::class,'store'])->name('enquiry.store');
+
+Route::get('/money',[MoneyController::class,'Moneyform'])->name('money');
+Route::post('/money/store',[MoneyController::class,'Moneystore'])->name('money.store'); 
+
+
 Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
 Route::put('/update/profile',[ProfileController::class,'updateprofile'])->name('update.profile');
 Route::put('/profile/update',[ProfileController::class,'updateImage'])->name('profile.update.image');
+
 Route::get('/user/logout',[WebController::class,'logout'])->name('user.logout');
 });

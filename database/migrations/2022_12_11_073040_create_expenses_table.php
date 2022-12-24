@@ -17,8 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('date');
             $table->string('details');
-            $table->string('remarks');
-            $table->string('category');
             $table->string('overall_balance');
             $table->timestamps();
         });

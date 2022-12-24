@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Enquiry;
+use Illuminate\Contracts\View\View;
 use Illuminate\Pagination\Paginator;
-
+use Illuminate\Support\Facades\View as FacadesView;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -26,5 +28,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         paginator:: useBootstrap();
+
+        $message = Enquiry::where("email", auth()?->user()?->email)->where("status","read")->get();
+
+        FacadesView::share("message",$message);
     }
 }

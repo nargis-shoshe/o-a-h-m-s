@@ -9,7 +9,6 @@
          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
              <span class="navbar-toggler-icon"></span>
          </button>
-
          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
              <div class="navbar-nav ml-auto">
                  <a href="{{route('webpage')}}" class="nav-item nav-link">Home</a>
@@ -30,6 +29,7 @@
                  <a href="{{route('profile')}}" class="nav-item nav-link">Profile</a>
 
                  <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
+                 <a href="" class="nav-item nav-link"><i class="fas fa-bell"></i></a>
                  @else
 
                  <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#login">Login</a>
