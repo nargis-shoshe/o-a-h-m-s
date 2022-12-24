@@ -53,7 +53,7 @@ if($request->hasFile('image'))
              Staff::create([
              'name'=>$request->name,
              'email'=>$request->email,
-             'password'=>$request->password,
+              
              'designation'=>$request->designation,
              'image'=>$fileName
 

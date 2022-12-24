@@ -57,10 +57,10 @@
                             </a>
 
 
-                            <a class="nav-link" href="{{route('aboutlist')}}">
+                            <!--<a class="nav-link" href="{{route('aboutlist')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 About Us
-                            </a>
+                            </a>-->
  
                             <a class="nav-link" href="{{route('donatemmoney.report')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>

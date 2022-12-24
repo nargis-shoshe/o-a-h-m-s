@@ -22,14 +22,13 @@ class ExpenseController extends Controller
             'date'=>'required',
             'overall_balance'=>'required',
             'details'=>'required',
-            'remarks'=>'required',
-            'category'=>'required',
+            
         ]);
         Expense::create([
          'date'=>$request->date,
          'remarks'=>$request->remarks,
          'details'=>$request->details,
-         'category'=>$request->category,
+          
          'overall_balance'=>$request->overall_balance,
         ]);
         return redirect()->route('expenselist'); 
@@ -64,10 +63,9 @@ public function viewexpense($expense_id)
 //dd($request->all());
         $expense->update([
             'date'=>$request->date,
-            'remarks'=>$request->remarks,
-            'remarks'=>$request->remarks,
+             
             'details'=>$request->details,
-            'category'=>$request->category,
+             
             'overall_balance'=>$request->overall_balance,
 
         ]);
