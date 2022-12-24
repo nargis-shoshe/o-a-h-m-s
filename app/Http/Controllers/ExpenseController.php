@@ -9,7 +9,7 @@ class ExpenseController extends Controller
 {
     public function expenselist(){
         $expense=Expense::all();
-
+        
         return view('Backend.pages.expenses.expenselist', compact('expense'));
     }
     public function expenseform(){
@@ -20,10 +20,13 @@ class ExpenseController extends Controller
         $request->validate([
 
             'date'=>'required',
+            'overall_balance'=>'required',
+            'details'=>'required',
+            'remarks'=>'required',
+            'category'=>'required',
         ]);
         Expense::create([
          'date'=>$request->date,
-         'remarks'=>$request->remarks,
          'remarks'=>$request->remarks,
          'details'=>$request->details,
          'category'=>$request->category,

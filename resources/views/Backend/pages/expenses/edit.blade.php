@@ -20,7 +20,7 @@
     
 
         <div class="form-group">
-            <label for="name"> Date</label>
+            <label for="name">Date</label>
             <input required name="date" type="date" class="form-control" id="name" placeholder="">
         </div>
 

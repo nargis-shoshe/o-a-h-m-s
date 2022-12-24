@@ -7,6 +7,6 @@
 
 
 
-<h1>staff list</h1>
+<h1> </h1>
 
 @endsection

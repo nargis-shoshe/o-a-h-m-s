@@ -32,7 +32,9 @@ public function store(Request $request)
        //dd($request->all());
 
         $request->validate([
-            'name'=>'required|unique:services,name'
+            'name'=>'required|unique:services,name',
+            'image'=>'required',
+            'description'=>'required'
         ]);
 
         $fileName=null;

@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('donor_amount')->nullable();
             $table->string('donor_email');
             $table->string('belongings')->nullable();
-
+            $table->string('account_number')->nullable();
+            $table->string('Transaction_id')->nullable();           
+            $table->string('payment_method')->nullable();           
             $table->string('phone_number');
             $table->timestamps();
         });

@@ -13,7 +13,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Message</th>
-        <th scope="col">Remark</th>
+        <th scope="col">Ation</th>
     </tr>
     </thead>
    
@@ -24,7 +24,10 @@
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->message}}</td>
-        <td>{{$data->status}}</td>
+        <td>
+                <a href="" class="btn btn-primary">Read</a>
+                <a href="" class="btn btn-danger">Unread</a>
+        </td>
     </tr>
      @endforeach
     </tbody>

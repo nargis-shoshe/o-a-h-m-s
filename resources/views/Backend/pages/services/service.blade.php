@@ -4,7 +4,7 @@
 
 <h1>   service list </h1>
 
-<a href="{{url('/name/form')}}" class="btn btn-primary"> create service list</a>
+<a href="{{route('name.form')}}" class="btn btn-primary"> create service list</a>
 
 
 

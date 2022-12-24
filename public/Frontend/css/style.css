@@ -54,10 +54,6 @@ a:focus {
     box-shadow: none;
 }
 
-.container-fluid {
-    max-width: 1366px;
-}
-
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
     font-size: inherit;
@@ -269,12 +265,14 @@ a:focus {
 .navbar-dark .navbar-nav .nav-link.active {
     padding: 10px 15px 8px 15px;
     color: #ffffff;
+    font-size: large;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
     color: #FDBE33;
     transition: none;
+    
 }
 
 .navbar .dropdown-menu {
@@ -969,8 +967,6 @@ a:focus {
 
 .causes .causes-btn {
     margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .causes .causes-btn .btn {

@@ -9,20 +9,21 @@
                             </a>
                              
 
-                            <a class="nav-link" href="{{url('/admin')}}">
+                            <a class="nav-link" href="{{route('user.list')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
-                                Admin
+                                Users Verify
                             </a>
 
+            
 
                             <a class="nav-link" href="{{route('details')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Senior Citizen
                             </a>
 
-                            <a class="nav-link" href="{{url('/name')}}">
+                            <a class="nav-link" href="{{route('name')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
-                                service
+                                Services
                             </a>
 
                             <a class="nav-link" href="{{route('enquiry.list')}}">
@@ -37,15 +38,9 @@
                                 Donation
                             </a>
 
-                            <a class="nav-link" href="index.html">
-                                <div class="sb-nav-link-icon"><i class=""></i></div>
-                                Member
-                            </a>
+                             
 
-                            
-
-
-                            <a class="nav-link" href="{{url('/add')}}">
+                            <a class="nav-link" href="{{route('add')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Staff
                             </a>
@@ -60,6 +55,18 @@
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
                                 Expense
                             </a>
+
+
+                            <a class="nav-link" href="{{route('aboutlist')}}">
+                                <div class="sb-nav-link-icon"><i class=""></i></div>
+                                About Us
+                            </a>
+ 
+                            <a class="nav-link" href="{{route('donatemmoney.report')}}">
+                                <div class="sb-nav-link-icon"><i class=""></i></div>
+                                Report
+                            </a>
+
 
 
                             

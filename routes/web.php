@@ -17,6 +17,8 @@ use App\Http\Controllers\EnquiryController;
 use App\Http\Controllers\MoneyController;  
 use App\Http\Controllers\ProfileController;  
 use App\Http\Controllers\ExpenseController;  
+use App\Http\Controllers\AboutController;  
+use App\Http\Controllers\RegistrationController;  
 
 /*
 |--------------------------------------------------------------------------
@@ -38,18 +40,29 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 
-Route::group(['middleware'=>'auth'], function(){
+Route::group(['middleware'=>'auth' ,'prefix'=>'admin'], function(){
+Route::group(['middleware'=>'admin'], function(){
    
     Route::get('/',[HommeController::class,'index'])->name('dashboard');
     
     Route::get('/dashboard',[DashboardController::class,'Dashboard'])->name('home');
+
+    Route::get('/user',[UserController::class,'userlist'])->name('user.list');
+    Route::get('/user/active/{user_id}',[UserController::class,'active'])->name('user.active');
+    Route::get('/user/reject/{user_id}',[UserController::class,'reject'])->name('user.reject');
+
+    Route::get('/scuser',[RegistrationController::class,'scuserlist'])->name('scuser.list');
+    Route::get('/scuser/active/{scuser_id}',[RegistrationController::class,'active'])->name('scuser.active');
+    Route::get('/scuser/reject/{scuser_id}',[RegistrationController::class,'reject'])->name('scuser.reject');
+ 
+ 
 
 
     Route::get('/add',[StaffController::class,'list'])->name('add');
     Route::get('/add/make',[StaffController::class,'create'])->name('add.make');
     Route::post('/add/store',[StaffController::class,'store'])->name('add.store');
     
-    Route::get('/admin',[AdminController::class,'panel']);
+    Route::get('/admin',[AdminController::class,'panel'])->name('admin');
     Route::post('/admin/store',[AdminController::class,'store'])->name('admin.store');
 
 
@@ -87,6 +100,10 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/donatemoney/list',[MoneyController::class,'donation_moneylist'])->name('donatemmoney.list');
     Route::get('/donatemoney/view{donor_id}',[MoneyController::class,'viewdonation'])->name('admin.donatemmoney.view');
 
+    //report generation
+    Route::get('/report',[MoneyController::class,'report'])->name('donatemmoney.report');
+    Route::get('/report/search',[MoneyController::class,'reportsearch'])->name('donatemmoney.report.search');
+
 
 
     Route::get('/expense',[ExpenseController::class,'expenselist'])->name('expenselist');
@@ -99,7 +116,14 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/expense/edit/{expense_id}',[ExpenseController::class,'editexpense'])->name('admin.expense.edit');
     Route::put('/expense/update/{expense_id}',[ExpenseController::class,'update'])->name('admin.expense.update');
 
+    Route::get('/about',[AboutController::class,'aboutlist'])->name('aboutlist');
+    Route::get('/about/form',[AboutController::class,'aboutform'])->name('aboutform');
+    Route::post('/about/store',[AboutController::class,'aboutstore'])->name('aboutstore');
+
+
+
     
+});
 });
 
 
@@ -107,18 +131,21 @@ Route::group(['middleware'=>'auth'], function(){
 
 Route::get('/',[WebController::class,'home'])->name('webpage');
 
+Route::post('/scregistration',[RegistrationController::class,'scregistration'])->name('scregistration');
 Route::post('/registration',[WebController::class,'registration'])->name('registration');
 Route::post('/user/login',[WebController::class,'login'])->name('user.login');
-Route::get('/user/logout',[WebController::class,'logout'])->name('user.logout');
-
+ 
 Route::get('/enquiry',[EnquiryController::class,'list'])->name('enquiry');
 Route::post('/enquiry/store',[EnquiryController::class,'store'])->name('enquiry.store');
 
 //Route::get('/belonging',[BelongingController::class,'list'])->name('belonging');
 //Route::post('/belonging/form',[BelongingController::class,'belongingsform'])->name('belonging.form');
- 
+
 Route::get('/money',[MoneyController::class,'Moneyform'])->name('money');
 Route::post('/money/store',[MoneyController::class,'Moneystore'])->name('money.store');
-
+Route::group(['middleware' => 'auth'], function () {
 Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
-Route::put('/profile/update',[ProfileController::class,'updateprofile'])->name('profile.update');
+Route::put('/update/profile',[ProfileController::class,'updateprofile'])->name('update.profile');
+Route::put('/profile/update',[ProfileController::class,'updateImage'])->name('profile.update.image');
+Route::get('/user/logout',[WebController::class,'logout'])->name('user.logout');
+});

@@ -19,7 +19,11 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            $table->string('registration_date')->nullable();
+            $table->string('date_of_birth')->nullable();
+            $table->string('emergency_number',11)->nullable();
+            $table->string('image')->nullable();
+            $table->string('status',10)->default('inactive');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

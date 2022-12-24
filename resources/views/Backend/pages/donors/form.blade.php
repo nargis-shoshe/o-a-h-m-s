@@ -2,8 +2,12 @@
 @section('content')
 
 <form action="{{route('donor.store')}}" method="post">
-
-@csrf
+@if($errors->any())
+@foreach($errors->all() as $message)
+<p class="alert alert-danger">{{$message}}</p>
+@endforeach
+@endif
+    @csrf
 <div class="form-group">
             <label for="name"> Name</label>
             <input name="name" type="text" class="form-control" id="name" placeholder="name">

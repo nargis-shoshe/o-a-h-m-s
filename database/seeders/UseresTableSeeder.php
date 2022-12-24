@@ -17,10 +17,11 @@ class UseresTableSeeder extends Seeder
     {
         User::create([
 
-            "name"=>'admin',
+            "name"=>'Admin',
             "role"=>'admin',
             "email"=>'admin@gmail.com',
             "password"=>bcrypt('12345'),
+            
         ]);
 
     }

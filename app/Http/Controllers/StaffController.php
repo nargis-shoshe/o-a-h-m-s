@@ -35,6 +35,8 @@ class StaffController extends Controller
         $request->validate([
             'name'=>'required|unique:staff,name',
             'email'=>'required',
+            'image'=>'required',
+            'designation'=>'required'
             
 
         ]);

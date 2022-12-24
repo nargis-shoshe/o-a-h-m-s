@@ -38,7 +38,7 @@ Citizen::create([
     'registration_date'=>$request->registration_date,
     'address'=>$request->address,
     'image'=>$fileName,
-    'date of birth'=>$request->date_of_birth,
+    'date_of_birth'=>$request->date_of_birth,
     'phone_number'=>$request->phone_number,
     'emergency_number'=>$request->emergency_number,
     'status'=>$request->status,

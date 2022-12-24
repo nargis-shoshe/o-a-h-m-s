@@ -6,12 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Old Age Home Management System</title>
+        <title >Old Age Home Management System</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{url('css/styles.css')}}" rel="stylesheet" />
+        
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+         
     </head>
     <body class="sb-nav-fixed">
+    @include('notify::components.notify') 
     @include('Backend.Fixed.header')
 
         <div id="layoutSidenav">
@@ -21,7 +24,21 @@
        
             <div id="layoutSidenav_content">
                 <main>
-
+            <div class="container">
+                <div class="container">
+                    <div class="container bg-danger">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    </div>
+                </div>
+            </div>
                 @yield('content')
                 
             </main>   
@@ -34,5 +51,6 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        @notifyJs
     </body>
 </html>
