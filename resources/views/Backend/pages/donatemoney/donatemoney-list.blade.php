@@ -1,6 +1,6 @@
 @extends('Backend.master')
 @section('content')
-<h1> Donate Money list </h1>
+<h1> Donation List </h1>
 
  
 
@@ -9,7 +9,8 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">id</th>
+        <th scope="col">SL</th>
+        <th scope="col">User-Id</th>
         <th scope="col">Donor-Name</th>
         <th scope="col">Donor-Email</th>
         <th scope="col">Phone-Number</th>
@@ -25,12 +26,13 @@
     </thead>
    
     <tbody>
-    @foreach($money as $data)
+    @foreach($money as $key=>$data)
     <tr>
-        <th scope="row">{{$data-> id}}</th>
-        <td>{{$data->donar_name}}</td>
-        <td>{{$data->donor_email}}</td>
-        <td>{{$data->phone_number}}</td>
+        <th scope="row">{{$key+1}}</th>
+        <td>{{$data->user->id}}</td>
+        <td>{{$data->user->name}}</td>
+        <td>{{$data->user->email}}</td>
+        <td>{{$data->user->mobile}}</td>
         <td>{{$data->donor_amount}}</td>
         <td>{{$data->belongings}}</td>
         <td>{{$data->Transaction_id}}</td>

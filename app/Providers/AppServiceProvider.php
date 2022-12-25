@@ -29,8 +29,5 @@ class AppServiceProvider extends ServiceProvider
     {
         paginator:: useBootstrap();
 
-        $message = Enquiry::where("email", auth()?->user()?->email)->where("status","read")->get();
-
-        FacadesView::share("message",$message);
     }
 }

@@ -23,7 +23,7 @@
 
         <div class="form-group">
             <label for="name"> Donate Belongings</label>
-            <input required  name="donor_belonging" type="text" class="form-control" id="name" placeholder="belonging">
+            <input   name="donor_belonging" type="text" class="form-control" id="name" placeholder="belonging">
         </div>
          
 
@@ -40,9 +40,9 @@
         <div class="form-group my-3">
             <label for="phone-number">Payment Method</label>
             <select name="status" id="name" class="form-control">
-                <option value="Bkash(01990668971)">Bkash</option>
-                <option value="Nogod(01990668971)">Nogod</option>
-                <option value="Rocket(01990668971)">Rocket</option>
+                <option value="Bkash">Bkash</option>
+                <option value="Nogod">Nogod</option>
+                <option value="Rocket">Rocket</option>
             </select>
              
         </div>

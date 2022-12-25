@@ -67,8 +67,8 @@ Route::group(['middleware'=>'admin'], function(){
 
 
     Route::get('/details',[CitizenController::class,'list'])->name('details');
-    Route::get('/formdetails',[CitizenController::class,'form'])->name('formdetails');
-    Route::post('/formstore',[CitizenController::class,'store'])->name('form.store');
+   // Route::get('/formdetails',[CitizenController::class,'form'])->name('formdetails');
+   // Route::post('/formstore',[CitizenController::class,'store'])->name('form.store');
 
     
     Route::get('/name',[ServiceController::class,'type'])->name('name');

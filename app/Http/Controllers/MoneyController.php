@@ -22,7 +22,7 @@ class MoneyController extends Controller
       
      'account_number'=>'required',
      'donor_amount'=>'required',
-     'donor_belonging'=>'required',
+      
      'transaction_id'=>'required',
      
 

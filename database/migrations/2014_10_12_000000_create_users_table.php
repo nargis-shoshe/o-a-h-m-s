@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('date_of_birth')->nullable();
             $table->string('emergency_number',11)->nullable();
             $table->string('image')->nullable();
-            $table->string('status',10)->default('inactive');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

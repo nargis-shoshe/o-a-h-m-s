@@ -7,9 +7,9 @@
             <div class="card-body">
                 <h2 class="card-title">Donation Details</h2>
 
-                <p class="card-text">Donor Name: {{$donor->donar_name}}</p>
-                <p class="card-text">Donor Email: {{$donor->donor_email}}</p>
-                <p class="card-text">Phone-Number: {{$donor->phone_number}}</p>
+                <p class="card-text">Donor Name: {{$donor->user->name}}</p>
+                <p class="card-text">Donor Email: {{$donor->user->email}}</p>
+                <p class="card-text">Phone-Number: {{$donor->user->mobile}}</p>
                 <p class="card-text">Belongings type: {{$donor->belongings}}</p>
                 <p class="card-text">Donor Amount: {{$donor->donor_amount}}</p>
 

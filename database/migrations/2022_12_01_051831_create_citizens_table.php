@@ -15,11 +15,10 @@ return new class extends Migration
     {
         Schema::create('citizens', function (Blueprint $table) {
             $table->id();
-            $table->string('registration_number');
             $table->string('registration_date');
             $table->string('name',100);
             $table->string('date_of_birth',50);
-            $table->string('phone_number',100);
+            $table->string('phone_number',11);
             $table->text('address')->nullable();
             $table->string('emergency_number',11);
             $table->string('image')->nullable();

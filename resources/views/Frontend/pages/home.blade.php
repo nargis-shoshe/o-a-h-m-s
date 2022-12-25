@@ -84,7 +84,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="service-item">
                     <div class=" ">
-                        <img style="border-radius: 10px; height:  100px; width:400px;" src="{{url('/Inserts/'.$data->image)}}" alt=" ">
+                        <img style="border-radius: 0px; height:  100px; width:400px;" src="{{url('/Inserts/'.$data->image)}}" alt=" ">
                         <i class=""></i>
                     </div>
                     <div class="service-text">
@@ -121,18 +121,19 @@
                 <div class="card" style="width: 18rem;">
                     <img src="{{url('/Inserts/'.$data->image)}}" class="card-img-top" alt="" style="height: 200px;">
                     <div class="card-body">
-                    <div>
-                                <h2 style="font-weight: bold">Name</h2>
-                                <p>{{$data->name}}</p>
-                            </div>
-                            <div>
-                                <h2 style="font-weight: bold">Email</h2>
-                                <p>{{$data->email}}</p>
-                            </div>
-                            <div>
-                                <h2 style="font-weight: bold">Designation</h2> <p>{{$data->designation}}</p>
-                                
-                            </div>
+                        <div>
+                            <h2 style="font-weight: bold">Name</h2>
+                            <p>{{$data->name}}</p>
+                        </div>
+                        <div>
+                            <h2 style="font-weight: bold">Email</h2>
+                            <p>{{$data->email}}</p>
+                        </div>
+                        <div>
+                            <h2 style="font-weight: bold">Designation</h2>
+                            <p>{{$data->designation}}</p>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -268,9 +269,9 @@
                                     <label for="exampleInputPassword1">Password</label>
                                     <input required name="senior_citizen_password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Role</label>
-                                    <input name="senior_citizen" type="text" class="form-control" id="exampleInputPassword1" placeholder="Role">
+                                <div class="mb-3">
+                                    <label for="image">Image</label>
+                                    <input required name="image" type="file" class="form-control" id="image">
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
 
@@ -341,7 +342,42 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="notification" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Message</h1>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
 
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Message</th>
+                            <th scope="col">status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach($message as $data)
+                        <tr>
+                            <td>{{$data->message}}</td>
+                            <td>{{$data->status}}</td>
+                        </tr>
+
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @endsection

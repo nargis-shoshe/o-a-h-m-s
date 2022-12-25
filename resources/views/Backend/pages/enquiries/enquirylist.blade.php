@@ -9,7 +9,7 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">id</th>
+        <th scope="col">Sl</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Message</th>
@@ -18,9 +18,9 @@
     </thead>
    
     <tbody>
-    @foreach($enquiries as $data)
+    @foreach($enquiries as $key=>$data)
     <tr>
-        <th scope="row">{{$data-> id}}</th>
+        <th scope="row">{{$key+1}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->message}}</td>

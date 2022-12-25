@@ -21,7 +21,7 @@ class RegistrationController extends Controller
                 // 'senior_citizen_name'=>'required',
                 // 'senior_citizen_email'=>'required',
                 // 'image'=>'required',
-                // 'phone_number'=>'required',
+                 'mobile'=>'required|numeric|digits:11',
                 // 'senior_citizen_password'=>'required',
                 // 'address'=>'required',
                 // 'registration_date'=>'required',
@@ -59,7 +59,7 @@ class RegistrationController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'mobile' => $request->phone_number,
             'emergency_number' => $request->emergency_number,
-            'status' => 'inactive',
+            
             'role' => 'Senior Citizen '
 
 

@@ -29,9 +29,9 @@
         <td> {{$data->registration_date}}</td>
         <td>
             
-        <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= " ">
+        <img width="80px" style="border-radius: 30px" src="{{url('/Inserts/'.$data->image)}}" alt= "">
         </td>
-        <td>{{$data->status}}</td>
+         
         <td>
             <a href=" " class="btn btn-primary">Edit</a>
             <a href="" class="btn btn-danger">Delete</a>
@@ -42,7 +42,7 @@
     </tbody>
 </table>
 
-<a href="{{route('formdetails')}}" class="btn btn-primary"> Manage Senior-Citizen list</a>
+ 
 
 {{$citiz->links()}}
 

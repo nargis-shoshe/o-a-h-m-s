@@ -16,25 +16,13 @@
             <input required name="date" type="date" class="form-control" id="name" placeholder="">
         </div>
 
-        <div class="form-group my-3">
-            <label for="name">Remarks</label>
-            <input  required name="remarks" type="text" class="form-control" id="remarks" placeholder="">
-        </div>   
+          
         <div class="form-group">
             <label for="email"> Details</label>
             <input required name="details" type="text" class="form-control" id="email" placeholder="">
         </div>
 
-       <!-- <div class="form-group">
-            <label for="name">Category</label>
-            <input  name="category" type="text" class="form-control" id="name" placeholder="belonging">
-        </div>
-
-        <div class="form-group">
-            <label for="name">Donation-Id</label>
-            <input  name="donation_id" type="number" class="form-control" id="name" placeholder="donation_id">
-        </div>-->
-         
+        
 
         <div class="form-group my-3">
             <label for="phone-number">Amount</label>

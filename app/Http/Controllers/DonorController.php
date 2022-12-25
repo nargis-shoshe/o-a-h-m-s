@@ -11,7 +11,7 @@ class DonorController extends Controller
     public function donor()
 
     {
-        $dons=User::where("role","doner")->get();
+        $dons=User::where("role","donor")->get();
 
         return view('Backend.pages.donors.donor',compact('dons'));
     }

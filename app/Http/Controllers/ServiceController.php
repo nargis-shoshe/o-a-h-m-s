@@ -10,7 +10,7 @@ class ServiceController extends Controller
 {
     public function type(){
         
-        $servs=Services::paginate(2);
+        $servs=Services::paginate(7);
         //dd($servs);
          
 

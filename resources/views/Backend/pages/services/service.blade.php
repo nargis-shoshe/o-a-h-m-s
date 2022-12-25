@@ -2,16 +2,16 @@
 
 @section('content')
 
-<h1>   service list </h1>
+<h1>   Service list </h1>
 
-<a href="{{route('name.form')}}" class="btn btn-primary"> create service list</a>
+<a href="{{route('name.form')}}" class="btn btn-primary">Add Service</a>
 
 
 
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">id</th>
+        <th scope="col">Sl</th>
         <th scope="col"> Name</th>
         <th scope="col">Description</th>
         <th scope="col">Image</th>
@@ -19,9 +19,9 @@
     </thead>
    
     <tbody>
-    @foreach($servs as $data)
+    @foreach($servs as $key=>$data)
     <tr>
-        <th scope="row">{{$data-> id}}</th>
+        <th scope="row">{{$key+1}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->description}}</td>
          

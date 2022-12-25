@@ -29,7 +29,7 @@
                  <a href="{{route('profile')}}" class="nav-item nav-link">Profile</a>
 
                  <a href="{{route('user.logout')}}" class="nav-item nav-link">Logout</a>
-                 <a href="" class="nav-item nav-link"><i class="fas fa-bell"></i></a>
+                 <a class="nav-item nav-link" data-toggle="modal" data-target="#notification"><i class="fas fa-bell"></i></a>
                  @else
 
                  <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#login">Login</a>
@@ -37,11 +37,6 @@
                  <a href="#" class="nav-item nav-link" data-toggle="modal" data-target="#Registration">Registration</a>
 
                  @endauth
-
-
-                  
-                  
-                  
              </div>
          </div>
      </div>

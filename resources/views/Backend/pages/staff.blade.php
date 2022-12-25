@@ -19,7 +19,7 @@
 <table class="table">
     <thead class="thead-dark">
     <tr>
-        <th scope="col">Id</th>
+        <th scope="col">Sl</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Designation</th>
@@ -29,9 +29,9 @@
     </thead>
    
     <tbody>
-    @foreach($staff as $data)
+    @foreach($staff as $key=>$data)
     <tr>
-        <th scope="row">{{$data-> id}}</th>
+        <th scope="row">{{$key+1}}</th>
         <td>{{$data->name}}</td>
         <td>{{$data->email}}</td>
         <td>{{$data->designation}}</td>

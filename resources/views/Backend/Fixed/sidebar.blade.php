@@ -11,7 +11,7 @@
 
                             <a class="nav-link" href="{{route('user.list')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>
-                                Users Verify
+                                User List
                             </a>
 
             
@@ -57,10 +57,7 @@
                             </a>
 
 
-                            <!--<a class="nav-link" href="{{route('aboutlist')}}">
-                                <div class="sb-nav-link-icon"><i class=""></i></div>
-                                About Us
-                            </a>-->
+                             
  
                             <a class="nav-link" href="{{route('donatemmoney.report')}}">
                                 <div class="sb-nav-link-icon"><i class=""></i></div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enquiry;
 use App\Models\Registration;
 use App\Models\Services;
 use App\Models\Staff;
@@ -14,7 +15,9 @@ class WebController extends Controller
     public function home(){
         $servs=Services::all();
         $staff=Staff::all();
-        return view('Frontend.pages.home',compact('servs','staff'));
+
+        $message = Enquiry::where("email", auth()?->user()?->email)->where("status","read")->get();
+        return view('Frontend.pages.home',compact('servs','staff',"message"));
     }
 
 
@@ -23,8 +26,8 @@ class WebController extends Controller
         $request->validate([
             'senior_citizen_name'=>'required',
             'senior_citizen_email'=>'required',
-            //'image'=>'required',
-            'phone_number'=>'required',
+            'image'=>'required',
+            'phone_number'=>'required|numeric|digits:11',
             'senior_citizen_password'=>'required',
             //'address'=>'required',
             //'registration_date'=>'required',
@@ -49,8 +52,8 @@ class WebController extends Controller
       'email'=>$request->senior_citizen_email,
       'mobile'=>$request->phone_number,
       'password'=>bcrypt($request->senior_citizen_password),
-      'role'=>"doner",
-      'status'=>'inactive',
+      'role'=>"Donor",
+       
       'address'=>$request->address,
       'registration_date'=>$request->registration_date,
       'image'=>$fileName,
