@@ -14,7 +14,7 @@ class DashboardController extends Controller
         $totalDonation = Donation::sum('donor_amount');
         $totalExpences = Expense::sum('overall_balance');
         $totalBelongings = Donation::whereNotNull('belongings')->count();
-        $totalServices= Services::sum('name');
+        $totalServices= Services::count('name');
         // dd($totalBelongings);
         return view('Backend.pages.dashboard',compact('totalDonation','totalExpences','totalBelongings','totalServices'));
     }

@@ -4,7 +4,7 @@
     <div class="row"> 
         <div class="col-12 col-md-6"> 
   
-    <form action="{{route('money.store')}}" method="post">
+    <form action="{{route('pay.now')}}" method="post">
 
 @if($errors->any())
 @foreach($errors->all() as $message)

@@ -108,7 +108,7 @@ public function viewstaff($staff_id)
         $staff->update([
             'name'=>$request->name,
             'email'=>$request->email,
-             'password'=>$request->password,
+              
              'image'=>$fileName
 
         ]);

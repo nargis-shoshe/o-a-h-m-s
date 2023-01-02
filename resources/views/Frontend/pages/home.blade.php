@@ -77,7 +77,7 @@
     <div id="service-1" class="container">
         <div class="section-header text-center">
             <p>What Services We Have?</p>
-            <h2>We believe that we can save more lifes with you</h2>
+            
         </div>
         <div class="row">
             @foreach($servs as $data)

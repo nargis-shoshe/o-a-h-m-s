@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>   staff list </h1>
+<h1>   Staff List </h1>
 
 
 @if(session()->has('message'))
@@ -47,7 +47,7 @@
         <td>
                 <a href="{{route('admin.staff.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.staff.delete',$data->id)}}" class="btn btn-danger">Delete</a>
-                <a href="{{route('admin.staff.view',$data->id)}}" class="btn btn-success">View</a>
+                
             </td>
     </tr>
      @endforeach

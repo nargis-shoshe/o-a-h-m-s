@@ -19,6 +19,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ExpenseController;  
 use App\Http\Controllers\AboutController;  
 use App\Http\Controllers\RegistrationController;  
+use App\Http\Controllers\SslCommerzPaymentController;  
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,22 @@ use App\Http\Controllers\RegistrationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// SSLCOMMERZ Start
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+
+Route::post('/pay', [SslCommerzPaymentController::class, 'index'])->name('pay.now');
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+//SSLCOMMERZ END
+
+
 
 
 
@@ -74,6 +91,8 @@ Route::group(['middleware'=>'admin'], function(){
     Route::get('/name',[ServiceController::class,'type'])->name('name');
     Route::get('/name/form',[ServiceController::class,'form'])->name('name.form');
     Route::post('/name/form/store',[ServiceController::class,'store'])->name('name.form.store');
+    Route::get('/service/edit/{service_id}',[ServiceController::class,'editservice'])->name('admin.service.edit');
+    Route::put('/service/update/{service_id}',[ServiceController::class,'update'])->name('admin.service.update');
 
 
     Route::get('/staff/delete/{staff_id}',[StaffController::class,'deletestaff'])->name('admin.staff.delete');

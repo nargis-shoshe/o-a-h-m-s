@@ -45,7 +45,7 @@
     </tbody>
 </table>
 
-<!--<a href="{{route('donor.form')}}" class="btn btn-primary"> create Donor list</a>-->
+ 
 
 
 @endsection

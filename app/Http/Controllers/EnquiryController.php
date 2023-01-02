@@ -50,6 +50,6 @@ return redirect()->route('webpage');
             "status"=>"read"
         ]);
     
-             return redirect()->back();
+             return redirect()->back()->with('message','Updated');;
     }
 }

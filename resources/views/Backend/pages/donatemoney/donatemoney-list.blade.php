@@ -48,4 +48,5 @@
      @endforeach
     </tbody>
 </table>
+{{$money->links()}}
 @endsection

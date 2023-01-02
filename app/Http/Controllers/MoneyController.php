@@ -21,7 +21,7 @@ class MoneyController extends Controller
       
       
      'account_number'=>'required',
-     'donor_amount'=>'required',
+     'donor_amount'=>'required|digits_between:1,99999999999999',
       
      'transaction_id'=>'required',
      
@@ -44,7 +44,7 @@ class MoneyController extends Controller
     }
 
     public function donation_moneylist(){
-        $money=Donation::all();
+        $money=Donation::paginate(10);
 
     return view('Backend.pages.donatemoney.donatemoney-list',compact('money'));
 

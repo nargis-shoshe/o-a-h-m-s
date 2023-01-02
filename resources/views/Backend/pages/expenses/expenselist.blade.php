@@ -11,7 +11,7 @@
          
          
         <!--<th scope="col">Donation Id</th>-->
-        <th scope="col">Amount</th>
+        <th scope="col">Amount(BDT)</th>
         <th scope="col">Action</th>
     </tr>
     </thead>
@@ -31,16 +31,16 @@
         <td>
                 <a href="{{route('admin.expense.edit',$data->id)}}" class="btn btn-primary">Edit</a>
                 <a href="{{route('admin.expense.delete',$data->id)}}" class="btn btn-danger">Delete</a>
-                <a href="{{route('admin.expense.view',$data->id)}}" class="btn btn-success">View</a>
+               
                  
             </td>
     </tr>
      @endforeach
     </tbody>
-
+    
 </table>
  
-
+ 
  
 
 @endsection
